@@ -15,9 +15,6 @@ import numpy
 import sys
 import pandas
 
-print(datetime.now(tz = tz.gettz("Asia/Bangkok")).strftime("%Y-%M-%d %H:%M:%S"))
-time.sleep(1)
-
 credentials = service_account.Credentials.from_service_account_file(
     'credentials.json')
 scoped_credentials = credentials.with_scopes(
