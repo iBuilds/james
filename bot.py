@@ -4,7 +4,6 @@ from google.oauth2 import service_account
 from google.auth.transport.requests import AuthorizedSession
 from dateutil import tz
 from datetime import datetime
-import os
 import gspread
 import hashlib
 import hmac
