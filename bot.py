@@ -260,17 +260,20 @@ def update_bot():
             if _response.json()['error'] == 17 or _response.json()['error'] == 18:
                 _rate = float(_rate_buy[x])
                 _response = place_bid(cryptocurrency, amount, _rate)
-                _last_time = datetime.now(tz = tz.gettz("Asia/Bangkok")).strftime("%Y-%m-%d %H:%M:%S")
-                _hash = _response.json()['result']['hash']
-                _fee = _response.json()['result']['fee']
-                _amount = _response.json()['result']['amt']
-                _coin = _response.json()['result']['rec']
-                time_buy[x] = _last_time
-                hash_buy[x] = _hash
-                fee_buy[x] = _fee
-                amout_buy[x] = _amount
-                coin_buy[x] = _coin
-                status_buy[x] = 'unfilled'
+                if _response.json()['error'] == 17 or _response.json()['error'] == 18:
+                    status_buy[x] = _response.json()['error']
+                else:    
+                    _last_time = datetime.now(tz = tz.gettz("Asia/Bangkok")).strftime("%Y-%m-%d %H:%M:%S")
+                    _hash = _response.json()['result']['hash']
+                    _fee = _response.json()['result']['fee']
+                    _amount = _response.json()['result']['amt']
+                    _coin = _response.json()['result']['rec']
+                    time_buy[x] = _last_time
+                    hash_buy[x] = _hash
+                    fee_buy[x] = _fee
+                    amout_buy[x] = _amount
+                    coin_buy[x] = _coin
+                    status_buy[x] = 'unfilled'
             else:
                 _last_time = datetime.now(tz = tz.gettz("Asia/Bangkok")).strftime("%Y-%m-%d %H:%M:%S")
                 _hash = _response.json()['result']['hash']
