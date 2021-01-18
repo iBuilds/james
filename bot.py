@@ -351,12 +351,10 @@ def update_bot():
     set_with_dataframe(sheet, data_frame)
     print(data_frame)
 
-# start_bot()
-test = 'Error: ' + str(18)
-print(test)
+start_bot()
 
-# while 1:
-#     try:
-#         update_bot()
-#     except Exception:
-#         pass
+while 1:
+    try:
+        update_bot()
+    except Exception:
+        pass
