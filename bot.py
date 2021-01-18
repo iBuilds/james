@@ -301,8 +301,6 @@ def update_bot():
             amout_buy[x] = _amount
             coin_buy[x] = _coin
             status_buy[x] = 'unfilled'
-        else:
-            status_buy[x] = 'API Error'
     
     for x in range(len(_hash_sale)):
         _hash_check = hash_check(_hash_sale[x])
@@ -345,8 +343,6 @@ def update_bot():
             amout_sale[x] = ''
             coin_sale[x] = ''
             status_sale[x] = ''
-        else:
-            status_sale[x] = 'API Error'
     update_dataframe()
     set_with_dataframe(sheet, data_frame)
     print(data_frame)
