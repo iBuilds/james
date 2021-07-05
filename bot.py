@@ -44,10 +44,10 @@ data_frame = {}
 # Config
 clear_data = 1
 cryptocurrency = 'THB_IOST'
-high = 1.00
-low = 0.60
+high = 0.9
+low = 0.5
 grid = 0.01
-amount = 10
+amount = 73
 fee = 0.25
 
 # Bitkub API info
